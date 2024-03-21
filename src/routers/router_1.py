@@ -10,7 +10,7 @@ router = APIRouter(prefix="/calculator")
 
 
 @router.post("/compute/", response_model=Compute)
-def read_heroes(
+def compute(
     number: int,
     mode: Mode = "SUM",
     db: DB = Depends(get_db),
@@ -38,7 +38,7 @@ def read_heroes(
 
 
 @router.post("/compute_all/", response_model=Compute_all)
-def read_heroes(
+def compute_all(
     numbers: List[int],
     mode: Mode = "SUM",
     db: DB = Depends(get_db),
